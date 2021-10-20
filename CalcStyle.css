@@ -1,0 +1,66 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(70, 99, 89);
+    }
+
+.calculator-grid {
+    display: grid;
+    justify-content: center; /*выравнивание элементов по центру*/
+    align-content: center; /*выравнивание по цетру в перпендикулярном justify-content направлении*/
+    min-height: 100vh; /*вся высота области просмотра*/
+    grid-template-columns: repeat(4, 100px);/*кол-во и ширина колонок*/
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);/*размер линий*/
+    }
+
+    .calculator-grid button {
+        cursor: pointer;
+        font-size: 2rem;
+        border: 1px, solid #243329;
+        outline: none;
+        background-color: rbga(255, 255, 255, 0.75);
+    }
+  
+        .calculator-grid button:hover {
+            background-color: #a9a9a9;
+        }
+
+    .span-two {
+        grid-column: span 2;/*AC занимает 2 области*/
+        color: #fdfdfd;
+        background-color: rgba(38, 44, 38, 0.8);
+      }
+    
+    .span-three {
+        grid-column: span 3;/*= занимает 3 области*/
+        color: #fdfdfd;
+        background-color: rgba(38, 44, 38, 0.8);
+      }
+
+      .output{
+        grid-column: 1 / -1; /*окно вывода занимает всю длину grid*/
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap: break-word;/*автоматический перенос*/
+        word-break: break-all;/*перенос в любом месте при превышении длины*/
+      }
+
+        .output .previous-operand{
+            color: rgba(255,255, 255, 0.75);
+            font-size: 1.5rem;
+        }
+
+        .output .current-operand{
+            color: white;
+            font-size: 2.5rem;
+        }
